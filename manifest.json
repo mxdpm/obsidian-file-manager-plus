@@ -1,0 +1,11 @@
+{
+	"id": "obsidian-file-manager-plus",
+	"name": "File Manager plus",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "增强型文件管理器，提供双列布局和高级文件操作功能。",
+	"author": "xitung",
+	"authorUrl": "https://github.com/mxdpm",
+	"isDesktopOnly": true,
+	"styles": ["styles.css"]
+}

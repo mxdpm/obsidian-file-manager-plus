@@ -1,0 +1,302 @@
+.file-manager-content {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.file-manager-container {
+    padding: 4px; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+span.file-manager-folder-name {
+  font-size: 14px;
+}
+.file-manager-folders {
+    min-width: 180px;
+    width: 250px;
+    flex-shrink: 0;
+    overflow: auto;
+    border-right: 1px solid var(--background-modifier-border);
+    /* 添加自定义滚动条样式，隐藏 
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;*/
+}
+.file-manager-selected{
+    background-color: #f9d5ad;
+}
+.file-manager-files {
+    flex: 1;
+    overflow: auto;
+    padding: 2px;
+}
+
+.file-manager-file-header {
+    font-size: 0.7em;
+    padding: 8px;
+    border-bottom: 1px solid var(--background-modifier-border);
+}	
+
+.file-manager-resizer {
+    width: 2px;
+    background-color: var(--background-modifier-border);
+    cursor: col-resize;
+}
+
+.file-manager-file-name {
+    max-width: calc(100% - 30px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--text-normal);
+    font-size: 0.95em;
+}
+
+.file-manager-menu-icon {
+    margin-right: 8px;
+    margin-left: 2px;
+    display: inline-block;
+    width: 14px;
+    text-align: center;
+}
+
+
+.file-manager-toolbar button,
+.file-manager-menu-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px !important;
+}
+
+.file-manager-file {
+    padding: 4px 2px;
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.file-manager-file-main {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.file-manager-filename-row {
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+.file-manager-file-tags {
+    margin-left: 24px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.file-manager-tag {
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    background-color: var(--tag-background);
+    color: var(--tag-color);
+    border: 1px solid var(--tag-border-color);
+    flex-shrink: 0;
+}
+
+
+/* Blue Topaz 彩虹大纲支持 */
+.file-manager-folder {
+    border-left: 2px solid transparent;
+    margin: 2px 0;
+    padding-left: 4px;
+    transition: all 0.2s ease;
+}
+/* 添加一级目录的分割线 */
+.file-manager-folders>.file-manager-folder {
+    border-bottom: 1px solid var(--background-modifier-border);
+    padding-bottom: 1px;
+    /* 添加底部边距由4-改为1*/
+    /* margin-bottom: 4px; */
+}
+/* 彩虹色边框 */
+.file-manager-folder:nth-child(7n+1) { border-left-color: var(--rainbow-color-1, #E16B8C); }
+.file-manager-folder:nth-child(7n+2) { border-left-color: var(--rainbow-color-2, #8F77B5); }
+.file-manager-folder:nth-child(7n+3) { border-left-color: var(--rainbow-color-3, #2EA9DF); }
+.file-manager-folder:nth-child(7n+4) { border-left-color: var(--rainbow-color-4, #4AB23F); }
+.file-manager-folder:nth-child(7n+5) { border-left-color: var(--rainbow-color-5, #E6B422); }
+.file-manager-folder:nth-child(7n+6) { border-left-color: var(--rainbow-color-6, #E75B45); }
+.file-manager-folder:nth-child(7n+7) { border-left-color: var(--rainbow-color-7, #A06F70); }
+
+
+/* 活动文件夹样式 */
+.file-manager-folder-active {
+    background-color: #f9d5ad;
+    font-weight: bold;
+}
+
+/* 文件夹标题样式优化 */
+.file-manager-folder-title {
+    display: flex;
+    align-items: center;
+    padding: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 子文件夹缩进和连接线 */
+.file-manager-folder-children {
+    margin-left: 6px;
+    padding-left: 4px;
+    border-left: 1px dashed var(--background-modifier-border);
+}
+
+/* 折叠图标样式 */
+.file-manager-collapse-icon {
+    width: 12px;
+    height: 16px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    color: #daa367;
+    transition: transform 0.2s ease;
+}
+
+/* 展开状态的折叠图标 */
+.file-manager-folder-children[style*="display: block"] + .file-manager-folder-title .file-manager-collapse-icon {
+    transform: rotate(90deg);
+}
+
+/* 拖拽相关样式 */
+.file-manager-drag-over {
+    background-color: var(--background-modifier-hover);
+    border: 1px dashed var(--interactive-accent);
+}
+
+.file-manager-dragging {
+    opacity: 0.5;
+}
+
+/* 工具栏样式优化 */
+.file-manager-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0px 4px 6px 4px;
+    border-bottom: 1px solid var(--background-modifier-border);
+    flex-wrap: wrap;
+}
+
+.file-manager-toolbar input {
+    flex: 1;
+    min-width: 80px;
+    height: 28px;
+    padding: 0 8px;
+    border-radius: 4px;
+    border: 1px solid var(--background-modifier-border);
+}
+
+.file-manager-toolbar button {
+    padding: 2px 2px;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: var(--interactive-normal);
+    color: var(--text-normal);
+    border: 1px solid var(--background-modifier-border);
+    cursor: pointer;
+    white-space: nowrap;
+    height: 28px;
+    min-width: 35px;
+}
+
+.file-manager-toolbar button:hover {
+    background-color: var(--interactive-hover);
+}
+
+.file-manager-delete-btn {
+    background-color: var(--background-modifier-error) !important;
+    color: var(--text-on-accent) !important;
+}
+
+
+
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: var(--text-normal);
+}
+
+/* 输入框和按钮容器布局 */
+.file-manager-name-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--background-modifier-border);
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* 修改按钮容器为水平布局，并移到右侧 */
+.file-manager-modal-button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.file-manager-modal-button-container button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    color: var(--text-normal);
+}
+
+.file-manager-modal-button-container button.mod-cta,
+.file-manager-modal-button-container button.mod-warning {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: none;
+}
+
+.file-manager-modal-button-container button:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.file-manager-modal-button-container button.mod-cta:hover,
+.file-manager-modal-button-container button.mod-warning:hover {
+    background-color: var(--interactive-accent-hover);
+}
+/* 模态框样式 */
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: var(--text-normal);
+}
+
+/* 文件夹选择模态框样式 */
+.folder-selection-item {
+    transition: background-color 0.15s ease;
+}
+
+.folder-selection-selected .folder-header {
+    background-color: var(--background-modifier-active) !important;
+}
+
+.folder-toggle-icon {
+    transition: transform 0.15s ease;
+}
+
+.folder-children-container {
+    margin-left: 16px;
+}
