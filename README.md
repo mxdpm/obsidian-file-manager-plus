@@ -1,5 +1,6 @@
 # obsidian-file-manager-plus
 这是一个obsidian插件，增强型文件管理器，提供双列布局和高级文件操作功能。基于个人需求开发，需要自取，如果觉得不错，请点击star支持一下，谢谢
+
 This is an Obsidian plugin, an enhanced file manager that provides dual column layout and advanced file manipulation functionality. Developed based on personal needs, self pickup is required. If you find it satisfactory, please click on Star Support. Thank you
 
 完整的插件文件：
